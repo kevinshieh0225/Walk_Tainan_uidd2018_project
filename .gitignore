@@ -1,0 +1,6 @@
+node_modules/
+
+public/pic/
+public/back_pic/
+public/*.png
+public/*.mp3
