@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  </head>
+  
+  <body>
+    <form id='ajax_form'>
+      Student ID1: <input id=student_form1 name="Student_ID1" type="text"><br>
+    </form>
+    <button id='search'>search</button>
+    <h1 id="ajax_content"></h1>
+    <button id='plus'>plus</button>   
+    <script>
+      //使用者 user_data
+      //被搜尋者 search_data
+      var user_id = 1;   //temp
+      var search_data;
+      var user_one_id;
+      var user_two_id;
+      var action_user_id;
+      $(document).ready(function() {
+        $('#search').click(function() {
+          console.log($("#student_form1").val());
+          $.ajax({
+            url: './ajax_data',
+            type: 'POST',
+            data:{
+              //search_email : $("#ajax_form input[name='Student_ID1']").val(),
+              search_email : $("#student_form1").val(),
+            },
+            success: function(data){
+              //$("#sudent_form1").empty();
+              console.log(data);
+              if(data[0].id){
+                search_data = data;
+                console.log(data[0].id);
+                $("#ajax_content").text("id =  " + data[0].id + "    " + data[0].username);
+              }
+              else{
+                console.log("no this man");
+              }
+            }  
+          })
+        })
+        $('#plus').click(function() {
+          if(user_id < search_data[0].id) {
+            user_one_id = user_id;
+            user_two_id = search_data[0].id;
+          }
+          else{
+            user_one_id = search_data[0].id;
+            user_two_id = user_id;
+          }
+
+          $.ajax({
+            url: './plus_friend',
+            type: 'POST',
+            data:{
+              user_one_id: user_one_id,
+              user_two_id: user_two_id,
+              status: 1,
+              action_user_id: user_id,
+            },
+            success: function(data){
+              console.log(data);
+            }
+          }) 
+        })
+
+
+
+      })
+    </script>
+  </body>
+</html>

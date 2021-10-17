@@ -1,0 +1,96 @@
+<!DOCTYPE>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.min.js"></script>
+    <title>行走台南</title>
+    <link rel="icon" href="./l.png">
+    <meta charset="UTF-8">
+    <style>
+      body,html{
+        height: 100%;
+        margin: 0;
+      }
+      #back{
+        background-image:url('pic/loginpage/login/login_background.png');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        height:100%;
+      }
+      #intro_text_1{
+    width: auto;
+    height: 3.5vw;
+    position: absolute;
+            top: 137vw;
+    left: 29vw;
+      }
+      #intro_text_2{
+    width: auto;
+    height: 3.5vw;
+    position: absolute;
+           top: 137vw;
+    left: 25vw;
+    display: none;
+      }
+      #intro_text_3{
+            width: auto;
+    height: 3.5vw;
+    position: absolute;
+            top: 137vw;
+    left: 19vw;
+    display:none;
+      }
+      #dot_1{
+        width: 2.5vw;
+        height: auto;
+        position: absolute;
+        top: 143vw;
+        left: 44.5vw;
+      }
+      #dot_back{
+        background-image: url(pic/HOMEPAGE_DOT.png);
+        background-size: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        height: 5vw;
+        width: 14vw;
+        position: absolute;
+        top: 142vw;
+        left: 43vw;
+      }
+      #login{
+            width: 36vw;
+    height: auto;
+        top: 150vw;
+    position: absolute;
+    left: 9vw;
+      }
+      #signup{
+            width: 36vw;
+    height: auto;
+        top: 150.4vw;
+    position: absolute;
+    right: 9vw;
+      }
+    </style>
+  </head>
+  <body>
+
+    <div id='back'>
+      <img src='pic/LOGO-01.png'style="width: 26vw;height: auto;top: 18vw;position: absolute;left: 37vw;">
+      <img src='pic/loginpage/login/EXPLORE.png' style="width: 68%;height: auto;top: 75%;position: absolute;left: 16%;display:none;">
+      <img id='login' src='pic/loginpage/login/login_buttom.png'>
+      <img id='signup' src='pic/loginpage/login/sign_up_buttom.png'>
+      <img id='intro_text_1' src='pic/loginpage/login/intro_text_1.png'>
+      <img id='intro_text_2' src='pic/loginpage/login/intro_text_2.png'>
+      <img id='intro_text_3' src='pic/loginpage/login/intro_text_3.png'>
+      
+      <img id='dot_1' src='pic/page_dot.png'>
+      <div id='dot_back'></div>
+
+    </div>
+    <script src="js/main.js"></script>    
+  </body>
+</html>
